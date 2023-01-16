@@ -1,14 +1,6 @@
 import { Telegraf } from 'telegraf'
 import { sequelize } from './db.js'
 
-// interface SessionData {
-//   heyCounter: number
-// }
-
-// interface BotContext extends Context {
-//   session?: SessionData
-// }
-
 const token = String(process.env.BOT_TOKEN)
 export const bot = new Telegraf(token)
 
@@ -23,6 +15,16 @@ const start = async () => {
 }
 
 start()
+
+bot.launch()
+
+// interface SessionData {
+//   heyCounter: number
+// }
+
+// interface BotContext extends Context {
+//   session?: SessionData
+// }
 // // @ts-ignore
 // function sendLiveLocation(ctx: any) {
 //   let lat = 42.0
@@ -39,4 +41,3 @@ start()
 //   })
 // }
 // bot.start(sendLiveLocation)
-bot.launch()
